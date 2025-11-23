@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Simple test to see if CSS is loading */
+body {
+  background-color: #f3f4f6;
+  font-family: system-ui, -apple-system, sans-serif;
+}

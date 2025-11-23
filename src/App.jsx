@@ -1,72 +1,67 @@
-import { useState } from 'react';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
+import Layout from './components/Layout';
+import TaskManager from './components/TaskManager';
+import APIDemo from './components/APIDemo';
 
-// Import your components here
-// import Button from './components/Button';
-// import Navbar from './components/Navbar';
-// import Footer from './components/Footer';
-// import TaskManager from './components/TaskManager';
-
-function App() {
-  const [count, setCount] = useState(0);
-
+function HomePage() {
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      {/* Navbar component will go here */}
-      <header className="bg-white dark:bg-gray-800 shadow">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold">PLP Task Manager</h1>
-        </div>
-      </header>
-
-      <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg p-6">
-          <div className="flex flex-col items-center justify-center">
-            <p className="text-lg mb-4">
-              Edit <code className="font-mono bg-gray-200 dark:bg-gray-700 p-1 rounded">src/App.jsx</code> and save to test HMR
-            </p>
-            
-            <div className="flex items-center gap-4 my-4">
-              <button
-                onClick={() => setCount((count) => count - 1)}
-                className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
-              >
-                -
-              </button>
-              <span className="text-xl font-bold">{count}</span>
-              <button
-                onClick={() => setCount((count) => count + 1)}
-                className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 transition-colors"
-              >
-                +
-              </button>
-            </div>
-
-            <p className="text-gray-500 dark:text-gray-400 mt-4">
-              Implement your TaskManager component here
-            </p>
-          </div>
-        </div>
-        
-        {/* API data display will go here */}
-        <div className="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg p-6">
-          <h2 className="text-2xl font-bold mb-4">API Data</h2>
-          <p className="text-gray-500 dark:text-gray-400">
-            Fetch and display data from an API here
+    <div className="text-center py-12">
+      <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+        Welcome to Task Manager
+      </h1>
+      <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+        A modern React application built with Tailwind CSS
+      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+          <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+            Task Management
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400 mb-4">
+            Create, organize, and track your tasks with our intuitive task manager.
           </p>
+          <a
+            href="/tasks"
+            className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Go to Tasks
+          </a>
         </div>
-      </main>
-
-      {/* Footer component will go here */}
-      <footer className="bg-white dark:bg-gray-800 shadow mt-auto">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-500 dark:text-gray-400">
-            © {new Date().getFullYear()} PLP Task Manager. All rights reserved.
+        <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+          <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
+            API Integration
+          </h3>
+          <p className="text-gray-600 dark:text-gray-400 mb-4">
+            Explore our API integration demo with JSONPlaceholder.
           </p>
+          <a
+            href="/api-demo"
+            className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors"
+          >
+            API Demo
+          </a>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }
 
-export default App; 
+function App() {
+  return (
+    <ThemeProvider>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/tasks" element={<TaskManager />} />
+            <Route path="/api-demo" element={<APIDemo />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </ThemeProvider>
+  );
+}
+
+export default App;

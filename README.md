@@ -1,70 +1,82 @@
-# React.js and Tailwind CSS Assignment
+# React Task Manager
 
-This assignment focuses on building a responsive React application using JSX and Tailwind CSS, implementing component architecture, state management, hooks, and API integration.
+A modern, responsive React application built with Vite and Tailwind CSS. Features task management, API integration, and dark/light theme switching.
 
-## Assignment Overview
+## ✨ Features
 
-You will:
-1. Set up a React project with Vite and Tailwind CSS
-2. Create reusable UI components
-3. Implement state management using React hooks
-4. Integrate with external APIs
-5. Style your application using Tailwind CSS
+- **Task Management**: Add, complete, delete, and filter tasks
+- **Local Storage**: Tasks persist in your browser
+- **API Integration**: Fetch and display posts from JSONPlaceholder API
+- **Dark/Light Theme**: Toggle between themes with persistent preference
+- **Responsive Design**: Works perfectly on desktop, tablet, and mobile
+- **React Router**: Client-side routing for seamless navigation
 
-## Getting Started
+## 🛠️ Tech Stack
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install dependencies:
-   ```
-   npm install
-   ```
-4. Start the development server:
-   ```
-   npm run dev
-   ```
+- **Frontend**: React 18, JSX
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Routing**: React Router DOM
+- **State Management**: React Hooks (useState, useEffect, useContext)
 
-## Files Included
 
-- `Week3-Assignment.md`: Detailed assignment instructions
-- Starter files for your React application:
-  - Basic project structure
-  - Pre-configured Tailwind CSS
-  - Sample component templates
+Project Live Link: https://react-js-jsx-and-css-mastering-fron-rho-three.vercel.app/
 
-## Requirements
+## 🚀 Quick Start
 
-- Node.js (v18 or higher)
+### Prerequisites
+- Node.js (v18 or higher recommended)
 - npm or yarn
-- Modern web browser
-- Code editor (VS Code recommended)
 
-## Project Structure
+### Installation
 
-```
+1. **Clone the repository**
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/react-task-manager.git](https://github.com/PLP-MERN-Stack-Development/react-js-jsx-and-css-mastering-front-end-development-reubenm597.git)
+   cd react-task-manager
+
+
+Install dependencies
+
+bash
+npm install
+Start the development server
+
+bash
+npm run dev
+Open your browser
+Navigate to http://localhost:3000
+
+
+
+📁 Project Structure
+text
 src/
-├── components/       # Reusable UI components
-├── pages/           # Page components
-├── hooks/           # Custom React hooks
-├── context/         # React context providers
-├── api/             # API integration functions
-├── utils/           # Utility functions
-└── App.jsx          # Main application component
-```
+├── components/          # Reusable UI components
+│   ├── Button.jsx      # Button with variants
+│   ├── Card.jsx        # Card container
+│   ├── TaskManager.jsx # Task management functionality
+│   ├── APIDemo.jsx     # API integration demo
+│   ├── Navbar.jsx      # Navigation with theme toggle
+│   ├── Footer.jsx      # Site footer
+│   └── Layout.jsx      # Main layout wrapper
+├── context/            # React context providers
+│   └── ThemeContext.jsx # Theme management
+├── api/                # API integration
+│   └── jsonPlaceholder.js
+├── App.jsx             # Main application component
+└── main.jsx            # Application entry point
 
-## Submission
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
 
-1. Complete all required components and features
-2. Implement proper state management with hooks
-3. Integrate with at least one external API
-4. Style your application with Tailwind CSS
-5. Deploy your application and add the URL to your README.md
 
-## Resources
 
-- [React Documentation](https://react.dev/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Router Documentation](https://reactrouter.com/) 
+
+🎯 Available Scripts
+npm run dev - Start development server
+
+npm run build - Create production build
+
+npm run preview - Preview production build locally
+
+npm run lint - Run ESLint
